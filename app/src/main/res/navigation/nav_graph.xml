@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/countriesListFragment">
+    <fragment
+        android:id="@+id/countriesListFragment"
+        android:name="com.chaimmili.countrieslist.view.CountriesListFragment"
+        android:label="CountriesListFragment" >
+        <action
+            android:id="@+id/action_countriesListFragment_to_bordersListFragment"
+            app:destination="@id/bordersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bordersListFragment"
+        android:name="com.chaimmili.countrieslist.view.BordersListFragment"
+        android:label="BordersListFragment" >
+
+        <argument android:name="countryName"
+            app:argType="string"/>
+
+        <argument android:name="bordersCode"
+            app:argType="string[]"/>
+    </fragment>
+</navigation>

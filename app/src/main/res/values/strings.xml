@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CountriesList</string>
+
+    <string name="main_title">All Countries</string>
+    <string name="bordering_with">Bordering with %s</string>
+
+    <string-array name="filter_options">
+        <item>Name ascending order</item>
+        <item>Name descending order</item>
+        <item>Area ascending order</item>
+        <item>Area descending order</item>
+    </string-array>
+</resources>
