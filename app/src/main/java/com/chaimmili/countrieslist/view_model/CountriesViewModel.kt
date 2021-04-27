@@ -8,6 +8,7 @@ import com.chaimmili.countrieslist.model.data.Country
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -16,6 +17,12 @@ class CountriesViewModel @Inject constructor(
 ) : ViewModel() {
 
     val countriesList = MutableLiveData<List<Country>>()
+
+    init {
+        viewModelScope.launch {
+            countriesRepository.refreshCountries()
+        }
+    }
 
     suspend fun getCountries(order: CountriesOrderBy) {
         countriesRepository.getCountriesByOrder(order).onEach {
